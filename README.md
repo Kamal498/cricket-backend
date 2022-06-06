@@ -25,7 +25,7 @@
    -> Microservices can call each other using the name by which they are registered in the Eureka Server.  
    
    ## Spring Config Server
-   -> This is Configuration Server which is connected to GitHub repository. It is SpringBoot application. 
+   -> This is Configuration Server which is connected to GitHub repository. It is SpringBoot application running on port 8888.   
    -> All the microservices with common configurations in application.properties file are stored in  
    the github repo file.  
    -> The Config server connects the GitHub repo with the other microservices so that they can read properties directly from git.  
