@@ -24,6 +24,13 @@
    available and running.  
    -> Microservices can call each other using the name by which they are registered in the Eureka Server.  
    
+   ## Spring Config Server
+   -> This is Configuration Server which is connected to GitHub repository.  
+   -> All the microservices with common configurations in application.properties file are stored in  
+   the github repo file.
+   -> The Config server connects the GitHub repo with the other microservices so that they can read properties directly from git.  
+   -> Link to github repo: https://github.com/Kamal498/cricket-config-server
+   
    ## Microservice 1: Cricket-Auth-Service
    -> This is an Authentication service. It is running on port 9192.  
    -> Any new user will register itselft by hitting the url '/auth/register' with userName, email and password in the body.   
@@ -32,5 +39,28 @@
    user will be returned with a JWT token which will be used to make request to other microservices.
    
    ## Microservice 2: Cricket-Matches-API
-   -> 
+   -> This is Matches API which is utilising another external api called cricapi.
+   -> It is running on port 8200.  
+   -> The Endpoints are:  
+   1. /cricket/matches/current-matches : returns all the current matches going on with live score.
+   2. /cricket/matches/match-details/{matchId} : returns all the details about a particular match with toss result, individual runs and wickets etc.
    
+   ## Microservice 3: Cricket-Players-API
+   -> This is Players API. Database used is NoSQL database i.e. MongoDB due to unstructured form of data available.  
+   -> It is running on port 8100.  
+   -> The Endpoints are:  
+   1. /cricket/players/get/allplayers: returns a list of all players available in the database.  
+   2. /cricket/players/add: add a player to the database.  
+   3. /cricket/players/search/byId/{id}: search for a player in the database by player unique id. Returns a unique player.  
+   4. /cricket/players/search/byName/{name}: search for any player in the database by the player name. Returns a list of players by that name.  
+   5. /cricket/players/search/byRole/{role}: search for players by their role(batsman/bowler etc). Returns a list of Player with the mentioned role.  
+   6. /cricket/players/delete/byId/{id}: delete any particular player from the database with the id provided. Returns the details of the Player deleted.  
+
+
+
+
+
+
+
+
+
