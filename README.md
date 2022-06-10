@@ -39,7 +39,7 @@
    user will be returned with a JWT token which will be used to make request to other microservices.
    
    ## Microservice 2: Cricket-Matches-API
-   -> This is Matches API which is utilising another external api called cricapi. It is SpringBoot application.
+   -> This is Matches API which is utilising another external api called cricapi. It is SpringBoot application.  
    -> It is running on port 8200.  
    -> The Endpoints are:  
    1. /cricket/matches/current-matches : returns all the current matches going on with live score.
